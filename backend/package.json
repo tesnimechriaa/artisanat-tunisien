@@ -1,0 +1,30 @@
+{
+  "name": "artisanat-tunisien-backend",
+  "version": "1.0.0",
+  "description": "Backend MEAN Stack - Gestion produits artisanat tunisien",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "MongoDB",
+    "Mongoose",
+    "Express",
+    "Node",
+    "Artisanat"
+  ],
+  "license": "MIT",
+  "author": "etudiant polytech monastir",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mongoose": "^8.5.0",
+    "slugify": "^1.6.9"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
