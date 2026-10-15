@@ -1,0 +1,68 @@
+<div class="container-principal page-produits">
+
+  <!-- breadcrumb -->
+  <div class="breadcrumb-elegant">
+    <a routerLink="/accueil">E-shop</a>
+    <span class="mx-2">/</span>
+    <span class="actif">Tous les produits</span>
+  </div>
+
+  <!-- titre et bouton ajout -->
+  <div class="entete-page">
+    <div>
+      <h1 class="titre-page">Notre collection</h1>
+      <p class="sous-titre-page">{{ produits.length }} produits artisanaux</p>
+    </div>
+    <a routerLink="/produits/ajouter" class="btn btn-violet">Ajouter un produit</a>
+  </div>
+
+  <!-- zone de recherche et filtre -->
+  <div class="zone-filtres">
+    <div class="row g-3 align-items-end">
+      <div class="col-md-5">
+        <label class="label-elegant">Recherche par nom</label>
+        <input type="text" class="form-control form-control-elegant"
+               [(ngModel)]="recherche"
+               placeholder="Rechercher un produit..."
+               (keyup.enter)="filtrer()">
+      </div>
+      <div class="col-md-4">
+        <label class="label-elegant">Filtrer par categorie</label>
+        <select class="form-control form-control-elegant" [(ngModel)]="categorieSelectionnee">
+          <option value="">Toutes les categories</option>
+          <option *ngFor="let cat of categories" [value]="cat.id">{{ cat.nom }}</option>
+        </select>
+      </div>
+      <div class="col-md-3">
+        <button class="btn btn-violet me-2" (click)="filtrer()">Filtrer</button>
+        <button class="btn btn-outline-noir" (click)="reinitialiser()" style="width: auto; padding: 12px 20px;">Reinitialiser</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- message si aucun produit -->
+  <div class="text-center py-5" *ngIf="produits.length === 0">
+    <p class="texte-vide">Aucun produit trouve</p>
+  </div>
+
+  <!-- grille de produits -->
+  <div class="row" *ngIf="produits.length > 0">
+    <div class="col-md-3 mb-5" *ngFor="let produit of produits">
+      <div class="card-produit">
+        <a [routerLink]="['/produits', produit.id]" class="lien-produit">
+          <img [src]="getImage(produit)" [alt]="produit.nom">
+          <div class="badge-categorie">{{ getNomCategorie(produit) }}</div>
+          <div class="nom-produit">{{ produit.nom }}</div>
+          <div class="prix-produit">{{ produit.prix }} TND</div>
+        </a>
+
+        <!-- actions sur le produit -->
+        <div class="actions-produit">
+          <a [routerLink]="['/produits/modifier', produit.id]" class="bouton-action">Modifier</a>
+          <button class="bouton-action bouton-supprimer" (click)="supprimer(produit.id!, produit.nom)">Supprimer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

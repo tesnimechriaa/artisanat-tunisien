@@ -1,0 +1,61 @@
+<div class="page-login">
+  <div class="row g-0 page-complete">
+
+    <!-- partie gauche : formulaire -->
+    <div class="col-md-6 partie-formulaire">
+      <div class="contenu-formulaire">
+        <h1 class="logo-degrade mb-4">Artisanat Tunisien</h1>
+        <h2 class="titre-bienvenue">Bienvenue</h2>
+        <p class="sous-titre">Connectez-vous pour acceder a la plateforme</p>
+
+        <form [formGroup]="formulaireLogin" (ngSubmit)="seConnecter()" class="mt-5">
+
+          <div class="mb-4">
+            <label class="label-elegant">Nom utilisateur</label>
+            <input type="text" class="form-control form-control-elegant"
+                   formControlName="username"
+                   placeholder="admin">
+            <div class="message-erreur" *ngIf="formulaireLogin.get('username')?.touched && formulaireLogin.get('username')?.invalid">
+              Le nom utilisateur est obligatoire
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <label class="label-elegant">Mot de passe</label>
+            <input type="password" class="form-control form-control-elegant"
+                   formControlName="password"
+                   placeholder="admin123">
+            <div class="message-erreur" *ngIf="formulaireLogin.get('password')?.touched && formulaireLogin.get('password')?.invalid">
+              Le mot de passe est obligatoire (minimum 3 caracteres)
+            </div>
+          </div>
+
+          <div class="message-erreur mb-3" *ngIf="messageErreur">
+            {{ messageErreur }}
+          </div>
+
+          <button type="submit" class="btn btn-violet w-100" [disabled]="formulaireLogin.invalid">
+            Se connecter
+          </button>
+
+          <div class="mt-4 info-compte">
+            <small>Compte de demonstration : admin / admin123</small>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- partie droite : image avec degrade -->
+    <div class="col-md-6 partie-image">
+      <div class="overlay-degrade">
+        <div class="contenu-overlay">
+          <h2 class="titre-overlay">Decouvrez l'artisanat tunisien</h2>
+          <p class="texte-overlay">
+            Plongez dans la richesse culturelle de la Tunisie a travers des produits authentiques fabriques par nos artisans.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,133 @@
+.page-detail {
+  padding: 20px 30px 80px;
+}
+
+.zone-image {
+  background-color: white;
+  padding: 20px;
+}
+
+.image-produit-grande {
+  width: 100%;
+  height: 700px;
+  object-fit: cover;
+}
+
+.zone-info {
+  padding: 30px 0 0 40px;
+  position: sticky;
+  top: 100px;
+}
+
+.badge-categorie-detail {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--violet-principal);
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.nom-produit-detail {
+  font-size: 36px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--texte-noir);
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.ligne-prix {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  font-size: 18px;
+}
+
+.origine-produit {
+  color: var(--texte-gris);
+  font-style: italic;
+}
+
+.separateur {
+  color: var(--texte-gris);
+}
+
+.prix-detail {
+  font-weight: 500;
+  color: var(--texte-noir);
+}
+
+.separateur-section {
+  height: 1px;
+  background-color: var(--bordure);
+  margin: 25px 0;
+}
+
+.titre-section-detail {
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--texte-noir);
+  margin-bottom: 15px;
+  font-family: 'Inter', sans-serif;
+  border-bottom: 2px solid var(--texte-noir);
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.description-produit {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--texte-gris);
+}
+
+.info-stock {
+  margin-bottom: 25px;
+  font-size: 14px;
+}
+
+.en-stock {
+  color: #16a34a;
+  font-weight: 500;
+}
+
+.rupture {
+  color: #dc3545;
+  font-weight: 500;
+}
+
+.boutons-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 30px;
+}
+
+.boutons-actions .btn {
+  text-align: center;
+}
+
+.info-livraison {
+  background-color: var(--gris-clair);
+  padding: 25px;
+  font-size: 13px;
+}
+
+.info-livraison p {
+  margin-bottom: 8px;
+  color: var(--texte-gris);
+}
+
+.info-livraison p:last-child {
+  margin-bottom: 0;
+}
+
+.info-livraison strong {
+  color: var(--texte-noir);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 11px;
+}

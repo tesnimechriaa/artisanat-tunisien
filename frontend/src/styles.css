@@ -1,0 +1,202 @@
+/* import Bootstrap depuis CDN */
+@import url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css');
+
+/* import police elegante pour les titres style Sezane */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* variables globales du projet */
+:root {
+  --violet-principal: #6366f1;
+  --violet-fonce: #4f46e5;
+  --violet-clair: #818cf8;
+  --beige-clair: #faf8f5;
+  --beige-fonce: #e8e2d8;
+  --texte-noir: #1a1a1a;
+  --texte-gris: #6b7280;
+  --gris-clair: #f3f4f6;
+  --bordure: #e5e7eb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--beige-clair);
+  color: var(--texte-noir);
+}
+
+/* titres elegants style Sezane */
+h1, h2, h3, h4, h5 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* style des boutons principaux */
+.btn-violet {
+  background: linear-gradient(135deg, var(--violet-principal), var(--violet-fonce));
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+.btn-violet:hover {
+  background: linear-gradient(135deg, var(--violet-fonce), var(--violet-principal));
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.btn-noir {
+  background-color: var(--texte-noir);
+  color: white;
+  border: none;
+  padding: 14px 30px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 13px;
+  transition: all 0.3s ease;
+  border-radius: 0;
+  width: 100%;
+}
+
+.btn-noir:hover {
+  background-color: #333;
+  color: white;
+}
+
+.btn-outline-noir {
+  background-color: transparent;
+  color: var(--texte-noir);
+  border: 1px solid var(--texte-noir);
+  padding: 14px 30px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 13px;
+  border-radius: 0;
+  width: 100%;
+}
+
+.btn-outline-noir:hover {
+  background-color: var(--texte-noir);
+  color: white;
+}
+
+/* breadcrumb style Sezane */
+.breadcrumb-elegant {
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--texte-gris);
+  padding: 20px 0;
+  margin-bottom: 30px;
+}
+
+.breadcrumb-elegant a {
+  color: var(--texte-gris);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.breadcrumb-elegant a:hover {
+  color: var(--texte-noir);
+}
+
+.breadcrumb-elegant .actif {
+  color: var(--texte-noir);
+  font-weight: 500;
+}
+
+/* logo degrade */
+.logo-degrade {
+  background: linear-gradient(135deg, var(--violet-principal), var(--violet-fonce));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 28px;
+  letter-spacing: 1px;
+}
+
+/* card produit style Sezane */
+.card-produit {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.card-produit:hover {
+  transform: translateY(-5px);
+}
+
+.card-produit img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.card-produit .nom-produit {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--texte-noir);
+  margin-bottom: 5px;
+}
+
+.card-produit .prix-produit {
+  font-size: 14px;
+  color: var(--texte-gris);
+}
+
+/* form controls elegants */
+.form-control-elegant {
+  border: none;
+  border-bottom: 1px solid var(--bordure);
+  border-radius: 0;
+  padding: 12px 0;
+  background: transparent;
+  font-size: 15px;
+  transition: border-color 0.3s;
+}
+
+.form-control-elegant:focus {
+  outline: none;
+  border-bottom-color: var(--violet-principal);
+  box-shadow: none;
+}
+
+/* messages d'erreur */
+.message-erreur {
+  color: #dc3545;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+/* container principal */
+.container-principal {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+/* page complete sans header */
+.page-complete {
+  min-height: 100vh;
+}

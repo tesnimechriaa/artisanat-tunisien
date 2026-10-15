@@ -1,0 +1,25 @@
+<header class="header-principal">
+  <div class="container-principal">
+    <div class="header-contenu">
+
+      <!-- logo a gauche -->
+      <a routerLink="/accueil" class="logo-lien">
+        <span class="logo-degrade">Artisanat Tunisien</span>
+      </a>
+
+      <!-- navigation au centre -->
+      <nav class="navigation">
+        <a routerLink="/accueil" routerLinkActive="lien-actif" [routerLinkActiveOptions]="{exact: true}" class="lien-nav">Accueil</a>
+        <a routerLink="/produits" routerLinkActive="lien-actif" class="lien-nav">Produits</a>
+        <a routerLink="/categories" routerLinkActive="lien-actif" class="lien-nav">Categories</a>
+      </nav>
+
+      <!-- utilisateur a droite -->
+      <div class="zone-utilisateur">
+        <span class="nom-utilisateur">{{ getUtilisateur() }}</span>
+        <button class="bouton-deconnexion" (click)="seDeconnecter()">Deconnexion</button>
+      </div>
+
+    </div>
+  </div>
+</header>

@@ -1,0 +1,61 @@
+<!-- banniere principale -->
+<section class="banniere">
+  <div class="banniere-overlay">
+    <div class="container-principal">
+      <h1 class="titre-banniere">Tresors d'Artisanat Tunisien</h1>
+      <p class="texte-banniere">
+        Decouvrez la richesse de notre patrimoine culturel a travers une selection unique de produits artisanaux.
+      </p>
+      <a routerLink="/produits" class="btn btn-violet">Decouvrir la collection</a>
+    </div>
+  </div>
+</section>
+
+<!-- section produits vedettes -->
+<section class="section-vedettes">
+  <div class="container-principal">
+    <div class="text-center mb-5">
+      <h2 class="titre-section">Nos Produits</h2>
+      <p class="sous-titre-section">Une selection des plus beaux produits de notre catalogue</p>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3 mb-4" *ngFor="let produit of produitsVedettes">
+        <a [routerLink]="['/produits', produit.id]" class="lien-produit">
+          <div class="card-produit">
+            <img [src]="getImage(produit)" [alt]="produit.nom">
+            <div class="nom-produit">{{ produit.nom }}</div>
+            <div class="prix-produit">{{ produit.prix }} TND</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="text-center mt-4">
+      <a routerLink="/produits" class="btn btn-outline-noir" style="width: auto; padding: 14px 50px;">Voir tous les produits</a>
+    </div>
+  </div>
+</section>
+
+<!-- section a propos -->
+<section class="section-apropos">
+  <div class="container-principal">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <img src="https://images.unsplash.com/photo-1583391733956-6c78276477e2?w=800" alt="Artisanat" class="image-apropos">
+      </div>
+      <div class="col-md-6">
+        <h2 class="titre-section">L'authenticite tunisienne</h2>
+        <p class="texte-apropos">
+          Chaque produit raconte une histoire, celle d'un savoir-faire transmis de generation en generation.
+          De la jebba traditionnelle aux poteries de Sejnane, en passant par les couffins en alfa de Nabeul,
+          nous valorisons le travail des artisans tunisiens.
+        </p>
+        <p class="texte-apropos">
+          Notre mission : faire rayonner l'artisanat tunisien au-dela des frontieres et soutenir
+          les communautes qui perpetuent ces traditions millenaires.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

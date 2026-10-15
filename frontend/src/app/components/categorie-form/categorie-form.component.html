@@ -1,0 +1,46 @@
+<div class="container-principal page-formulaire">
+
+  <div class="breadcrumb-elegant">
+    <a routerLink="/accueil">E-shop</a>
+    <span class="mx-2">/</span>
+    <a routerLink="/categories">Categories</a>
+    <span class="mx-2">/</span>
+    <span class="actif">{{ modeModification ? 'Modifier' : 'Ajouter' }}</span>
+  </div>
+
+  <h1 class="titre-formulaire">{{ modeModification ? 'Modifier la categorie' : 'Ajouter une nouvelle categorie' }}</h1>
+
+  <form [formGroup]="formulaireCategorie" (ngSubmit)="enregistrer()" class="formulaire">
+
+    <div class="mb-4">
+      <label class="label-elegant">Nom de la categorie</label>
+      <input type="text" class="form-control form-control-elegant" formControlName="nom"
+             placeholder="Ex : Vetements traditionnels">
+      <div class="message-erreur" *ngIf="formulaireCategorie.get('nom')?.touched && formulaireCategorie.get('nom')?.invalid">
+        Le nom est obligatoire (minimum 2 caracteres)
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label class="label-elegant">Description</label>
+      <textarea class="form-control form-control-elegant" formControlName="description"
+                rows="3" placeholder="Description de la categorie..."></textarea>
+    </div>
+
+    <div class="mb-4">
+      <label class="label-elegant">URL de l'image</label>
+      <input type="text" class="form-control form-control-elegant" formControlName="image"
+             placeholder="https://...">
+    </div>
+
+    <div class="zone-boutons">
+      <button type="submit" class="btn btn-violet me-3">
+        {{ modeModification ? 'Modifier' : 'Ajouter' }}
+      </button>
+      <button type="button" class="btn btn-outline-noir" (click)="annuler()" style="width: auto; padding: 12px 30px;">
+        Annuler
+      </button>
+    </div>
+
+  </form>
+</div>

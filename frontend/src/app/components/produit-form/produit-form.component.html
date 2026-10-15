@@ -1,0 +1,83 @@
+<div class="container-principal page-formulaire">
+
+  <!-- breadcrumb -->
+  <div class="breadcrumb-elegant">
+    <a routerLink="/accueil">E-shop</a>
+    <span class="mx-2">/</span>
+    <a routerLink="/produits">Produits</a>
+    <span class="mx-2">/</span>
+    <span class="actif">{{ modeModification ? 'Modifier' : 'Ajouter' }}</span>
+  </div>
+
+  <h1 class="titre-formulaire">{{ modeModification ? 'Modifier le produit' : 'Ajouter un nouveau produit' }}</h1>
+
+  <form [formGroup]="formulaireProduit" (ngSubmit)="enregistrer()" class="formulaire">
+
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <label class="label-elegant">Nom du produit</label>
+        <input type="text" class="form-control form-control-elegant" formControlName="nom"
+               placeholder="Ex : Jebba Tunisienne">
+        <div class="message-erreur" *ngIf="formulaireProduit.get('nom')?.touched && formulaireProduit.get('nom')?.invalid">
+          Le nom est obligatoire (minimum 2 caracteres)
+        </div>
+      </div>
+
+      <div class="col-md-6 mb-4">
+        <label class="label-elegant">Categorie</label>
+        <select class="form-control form-control-elegant" formControlName="categorie">
+          <option value="">Selectionner une categorie</option>
+          <option *ngFor="let cat of categories" [value]="cat.id">{{ cat.nom }}</option>
+        </select>
+        <div class="message-erreur" *ngIf="formulaireProduit.get('categorie')?.touched && formulaireProduit.get('categorie')?.invalid">
+          La categorie est obligatoire
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <label class="label-elegant">Prix (TND)</label>
+        <input type="number" class="form-control form-control-elegant" formControlName="prix"
+               placeholder="0">
+        <div class="message-erreur" *ngIf="formulaireProduit.get('prix')?.touched && formulaireProduit.get('prix')?.invalid">
+          Le prix doit etre un nombre positif
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <label class="label-elegant">Stock</label>
+        <input type="number" class="form-control form-control-elegant" formControlName="stock"
+               placeholder="0">
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <label class="label-elegant">Origine</label>
+        <input type="text" class="form-control form-control-elegant" formControlName="origine"
+               placeholder="Ex : Nabeul">
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label class="label-elegant">URL de l'image</label>
+      <input type="text" class="form-control form-control-elegant" formControlName="image"
+             placeholder="https://...">
+    </div>
+
+    <div class="mb-4">
+      <label class="label-elegant">Description</label>
+      <textarea class="form-control form-control-elegant" formControlName="description"
+                rows="4" placeholder="Description du produit..."></textarea>
+    </div>
+
+    <div class="zone-boutons">
+      <button type="submit" class="btn btn-violet me-3">
+        {{ modeModification ? 'Modifier' : 'Ajouter' }}
+      </button>
+      <button type="button" class="btn btn-outline-noir" (click)="annuler()" style="width: auto; padding: 12px 30px;">
+        Annuler
+      </button>
+    </div>
+
+  </form>
+</div>

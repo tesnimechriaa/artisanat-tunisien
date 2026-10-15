@@ -1,0 +1,96 @@
+.page-login {
+  min-height: 100vh;
+  background-color: white;
+}
+
+.partie-formulaire {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+  min-height: 100vh;
+}
+
+.contenu-formulaire {
+  width: 100%;
+  max-width: 420px;
+}
+
+.titre-bienvenue {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 42px;
+  font-weight: 500;
+  color: var(--texte-noir);
+  margin-bottom: 8px;
+}
+
+.sous-titre {
+  color: var(--texte-gris);
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+
+.label-elegant {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--texte-gris);
+  margin-bottom: 8px;
+}
+
+.info-compte {
+  text-align: center;
+  color: var(--texte-gris);
+  font-style: italic;
+}
+
+/* partie image avec degrade violet */
+.partie-image {
+  background: linear-gradient(135deg, var(--violet-principal) 0%, var(--violet-fonce) 100%);
+  background-image:
+    linear-gradient(135deg, rgba(99, 102, 241, 0.85), rgba(79, 70, 229, 0.85)),
+    url('https://images.unsplash.com/photo-1591561954557-26941169b49e?w=1200');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.overlay-degrade {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+}
+
+.contenu-overlay {
+  color: white;
+  max-width: 480px;
+  text-align: center;
+}
+
+.titre-overlay {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 48px;
+  font-weight: 500;
+  margin-bottom: 25px;
+  line-height: 1.2;
+  color: white;
+}
+
+.texte-overlay {
+  font-size: 18px;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+@media (max-width: 768px) {
+  .partie-image {
+    display: none;
+  }
+}

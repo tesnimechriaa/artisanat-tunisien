@@ -1,0 +1,76 @@
+.header-principal {
+  background-color: white;
+  border-bottom: 1px solid var(--bordure);
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.header-contenu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-lien {
+  text-decoration: none;
+}
+
+.navigation {
+  display: flex;
+  gap: 40px;
+}
+
+.lien-nav {
+  color: var(--texte-noir);
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 5px 0;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s;
+}
+
+.lien-nav:hover {
+  color: var(--violet-principal);
+}
+
+.lien-actif {
+  color: var(--violet-principal);
+  border-bottom-color: var(--violet-principal);
+}
+
+.zone-utilisateur {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nom-utilisateur {
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--texte-gris);
+}
+
+.bouton-deconnexion {
+  background: transparent;
+  border: 1px solid var(--bordure);
+  padding: 8px 18px;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+  color: var(--texte-noir);
+}
+
+.bouton-deconnexion:hover {
+  background-color: var(--texte-noir);
+  color: white;
+  border-color: var(--texte-noir);
+}

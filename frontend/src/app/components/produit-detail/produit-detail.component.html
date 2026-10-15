@@ -1,0 +1,73 @@
+<div class="container-principal page-detail" *ngIf="produit">
+
+  <!-- breadcrumb -->
+  <div class="breadcrumb-elegant">
+    <a routerLink="/accueil">E-shop</a>
+    <span class="mx-2">/</span>
+    <a routerLink="/produits">Produits</a>
+    <span class="mx-2">/</span>
+    <span class="actif">{{ produit.nom }}</span>
+  </div>
+
+  <div class="row">
+
+    <!-- partie gauche : image grande -->
+    <div class="col-md-7">
+      <div class="zone-image">
+        <img [src]="getImage()" [alt]="produit.nom" class="image-produit-grande">
+      </div>
+    </div>
+
+    <!-- partie droite : informations produit -->
+    <div class="col-md-5">
+      <div class="zone-info">
+        <div class="badge-categorie-detail">{{ getNomCategorie() }}</div>
+        <h1 class="nom-produit-detail">{{ produit.nom }}</h1>
+
+        <div class="ligne-prix">
+          <span class="origine-produit">{{ produit.origine }}</span>
+          <span class="separateur">—</span>
+          <span class="prix-detail">{{ produit.prix }} TND</span>
+        </div>
+
+        <div class="separateur-section"></div>
+
+        <h3 class="titre-section-detail">Description</h3>
+        <p class="description-produit">{{ produit.description }}</p>
+
+        <div class="separateur-section"></div>
+
+        <div class="info-stock">
+          <span *ngIf="produit.stock && produit.stock > 0" class="en-stock">
+            En stock : {{ produit.stock }} disponibles
+          </span>
+          <span *ngIf="!produit.stock || produit.stock === 0" class="rupture">
+            Rupture de stock
+          </span>
+        </div>
+
+        <div class="boutons-actions">
+          <button class="btn btn-noir mb-3">Ajouter au panier</button>
+          <a [routerLink]="['/produits/modifier', produit.id]" class="btn btn-outline-noir mb-3 d-block">
+            Modifier le produit
+          </a>
+          <button class="btn btn-outline-noir" (click)="supprimer()">Supprimer le produit</button>
+        </div>
+
+        <div class="info-livraison">
+          <p><strong>Origine :</strong> {{ produit.origine }}, Tunisie</p>
+          <p><strong>Categorie :</strong> {{ getNomCategorie() }}</p>
+          <p><strong>Reference :</strong> {{ produit.id }}</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- chargement -->
+<div class="container-principal text-center py-5" *ngIf="!produit">
+  <p>Chargement du produit...</p>
+</div>

@@ -1,0 +1,73 @@
+.banniere {
+  height: 600px;
+  background-image:
+    linear-gradient(135deg, rgba(99, 102, 241, 0.6), rgba(79, 70, 229, 0.6)),
+    url('https://images.unsplash.com/photo-1591561954557-26941169b49e?w=1600');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.banniere-overlay {
+  width: 100%;
+  color: white;
+}
+
+.titre-banniere {
+  font-size: 64px;
+  font-weight: 500;
+  color: white;
+  max-width: 700px;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.texte-banniere {
+  font-size: 18px;
+  max-width: 600px;
+  margin-bottom: 35px;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.section-vedettes {
+  padding: 60px 0;
+}
+
+.titre-section {
+  font-size: 42px;
+  color: var(--texte-noir);
+  margin-bottom: 10px;
+}
+
+.sous-titre-section {
+  color: var(--texte-gris);
+  font-size: 16px;
+  font-style: italic;
+}
+
+.lien-produit {
+  text-decoration: none;
+  color: inherit;
+}
+
+.section-apropos {
+  background-color: white;
+  padding: 100px 0;
+  margin-top: 80px;
+}
+
+.image-apropos {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.texte-apropos {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--texte-gris);
+  margin-bottom: 20px;
+}
